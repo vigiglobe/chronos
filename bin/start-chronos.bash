@@ -19,7 +19,7 @@ if [ "${1:-absent}" == "absent" ] || [ "${1:0:1}" == '-' ]; then
   then
     flags+=( --hostname $public_hostname )
   else
-    flags+=( --hostname `hostname` )
+    flags+=( --hostname `hostname -f` )
   fi
 
   jar_files=( "$chronos_home"/target/chronos*.jar )
